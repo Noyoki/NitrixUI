@@ -133,8 +133,8 @@ function library:Window(name)
     HeaderText.Parent = Header
     HeaderText.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
     HeaderText.BackgroundTransparency = 1.000
-    HeaderText.Position = UDim2.new({0, 0},{-0.002, 0})
-    HeaderText.Size = UDim2.new(0, 206, 0, 33)
+    HeaderText.Position = UDim2.new(0, 0, -0.002, 0)
+    HeaderText.Size = UDim2.new(0, 206, 0, 26)
     HeaderText.ZIndex = 6 + zindex
     HeaderText.Font = Enum.Font.SourceSans
     HeaderText.Text = name or "Window"
@@ -211,9 +211,9 @@ function library:Window(name)
         local Label = Instance.new("TextLabel")
         Label.Name = "Label"
         Label.Parent = Window
-        Label.BackgroundColor3 = Color3.fromRGB(220, 221, 225)
-        Label.BackgroundTransparency = 1.000
-        Label.BorderColor3 = Color3.fromRGB(27, 42, 53)
+        Label.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+        Label.BackgroundTransparency = 1
+        Label.BorderColor3 = Color3.fromRGB(33, 33, 33)
         Label.Position = UDim2.new(0, 0, 0, listOffset[winCount])
         Label.Size = UDim2.new(0, 206, 0, 29)
         Label.Font = Enum.Font.SourceSans
