@@ -186,7 +186,7 @@ function library:Window(name)
         Button.Name = "Button"
         Button.Parent = Window
         Button.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-        Button.BorderColor3 = Color3.fromRGB(43, 43, 43)
+        Button.BorderColor3 = Color3.fromRGB(60, 60, 60)
         Button.Position = UDim2.new(0, 12, 0, listOffset[winCount])
         Button.Size = UDim2.new(0, 182, 0, 26)
         Button.ZIndex = 2 + zindex
@@ -202,6 +202,8 @@ function library:Window(name)
         pastSliders[winCount] = false
     end
     function functions:Label(text, color)
+        local labelFunctions = {}
+
         local color = color or Color3.fromRGB(220, 221, 225)
 
         sizes[winCount] = sizes[winCount] + 32
@@ -211,28 +213,18 @@ function library:Window(name)
         local Label = Instance.new("TextLabel")
         Label.Name = "Label"
         Label.Parent = Window
-        Label.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
-        Label.BackgroundTransparency = 1
-        Label.BorderColor3 = Color3.fromRGB(33, 33, 33)
-        Label.Position = UDim2.new(0, 0, 0, listOffset[winCount])
-        Label.Size = UDim2.new(0, 206, 0, 29)
+        Label.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+        Label.BackgroundTransparency = 0
+        Label.BorderColor3 = Color3.fromRGB(60, 60, 60)
+        Label.Position = UDim2.new(0, 12, 0, listOffset[winCount])
+        Label.Size = UDim2.new(0, 182, 0, 26)
         Label.Font = Enum.Font.SourceSans
         Label.Text = text or "Label"
+        Label.TextColor3 = Color3.fromRGB(245, 246, 250)
         Label.TextSize = 16.000
         Label.ZIndex = 2 + zindex
 
-        if type(color) == "boolean" and color then
-	    spawn(function()
-                while wait() do
-                    local hue = tick() % 5 / 5
-                    Label.TextColor3 = Color3.fromHSV(hue, 1, 1)
-                end
-	    end)
-        else
-            Label.TextColor3 = color
-        end
         pastSliders[winCount] = false
-	
 	return Label
     end
     function functions:Toggle(text, on, callback)
@@ -298,7 +290,7 @@ function library:Window(name)
         local BoxDescription = Instance.new("TextLabel")
         TextBox.Parent = Window
         TextBox.BackgroundColor3 = Color3.fromRGB(53, 59, 72)
-        TextBox.BorderColor3 = Color3.fromRGB(113, 128, 147)
+        TextBox.BorderColor3 = Color3.fromRGB(60, 60, 60)
         TextBox.Position = UDim2.new(0, 99, 0, listOffset[winCount])
         TextBox.Size = UDim2.new(0, 95, 0, 26)
         TextBox.Font = Enum.Font.SourceSans
@@ -399,8 +391,8 @@ function library:Window(name)
 
         Slider.Name = "Slider"
         Slider.Parent = Window
-        Slider.BackgroundColor3 = Color3.fromRGB(47, 54, 64)
-        Slider.BorderColor3 = Color3.fromRGB(113, 128, 147)
+        Slider.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+        Slider.BorderColor3 = Color3.fromRGB(60, 60, 60)
         Slider.Position = UDim2.new(0, 13, 0, listOffset[winCount])
         Slider.Size = UDim2.new(0, 180, 0, 6)
         Slider.ZIndex = 2 + zindex
@@ -410,8 +402,8 @@ function library:Window(name)
         SliderButton.Position = UDim2.new(0, (Slider.Size.X.Offset - 5) * ((default - min)/(max-min)), -1.333337, 0)
         SliderButton.Name = "SliderButton"
         SliderButton.Parent = Slider
-        SliderButton.BackgroundColor3 = Color3.fromRGB(53, 59, 72)
-        SliderButton.BorderColor3 = Color3.fromRGB(113, 128, 147)
+        SliderButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+        SliderButton.BorderColor3 = Color3.fromRGB(60, 60, 60)
         SliderButton.Size = UDim2.new(0, 6, 0, 22)
         SliderButton.ZIndex = 3 + zindex
         SliderButton.InputBegan:Connect(SliderMovement)
@@ -501,8 +493,8 @@ function library:Window(name)
 
         Dropdown.Name = "Dropdown"
         Dropdown.Parent = Window
-        Dropdown.BackgroundColor3 = Color3.fromRGB(53, 59, 72)
-        Dropdown.BorderColor3 = Color3.fromRGB(113, 128, 147)
+        Dropdown.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+        Dropdown.BorderColor3 = Color3.fromRGB(60, 60, 60)
         Dropdown.Position = UDim2.new(0, 12, 0, listOffset[winCount])
         Dropdown.Size = UDim2.new(0, 182, 0, 26)
         Dropdown.Selected = true
@@ -544,8 +536,8 @@ function library:Window(name)
         DropdownFrame.Name = "DropdownFrame"
         DropdownFrame.Parent = Dropdown
         DropdownFrame.Active = true
-        DropdownFrame.BackgroundColor3 = Color3.fromRGB(53, 59, 72)
-        DropdownFrame.BorderColor3 = Color3.fromRGB(53, 59, 72)
+        DropdownFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+        DropdownFrame.BorderColor3 = Color3.fromRGB(60, 60, 60)
         DropdownFrame.Position = UDim2.new(0, 0, 0, 28)
         DropdownFrame.Size = UDim2.new(0, 182, 0, 0)
         DropdownFrame.Visible = false
@@ -563,8 +555,8 @@ function library:Window(name)
             local Button_2 = Instance.new("TextButton")
             Button_2.Name = "Button"
             Button_2.Parent = DropdownFrame
-            Button_2.BackgroundColor3 = Color3.fromRGB(53, 59, 72)
-            Button_2.BorderColor3 = Color3.fromRGB(113, 128, 147)
+            Button_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+            Button_2.BorderColor3 = Color3.fromRGB(60, 60, 60)
             Button_2.Position = UDim2.new(0, 6, 0, canvasSize + 1)
             Button_2.Size = UDim2.new(0, 170, 0, 26)
             Button_2.Selected = true
